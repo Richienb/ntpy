@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
-	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"name": "ntpy",
+	"version": "1.0.0",
+	"description": "NTP client for Node.js.",
+	"repository": "https://github.com/Richienb/ntpy.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,8 +17,29 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"ntp",
+		"network",
+		"time",
+		"protocol",
+		"server",
+		"get",
+		"secure",
+		"port",
+		"web",
+		"online",
+		"date",
+		"second",
+		"minute",
+		"unix",
+		"utc"
+	],
+	"dependencies": {
+		"@sindresorhus/is": "^2.1.0",
+		"ntp-packet-parser": "^0.1.0",
+		"p-event": "^4.1.0",
+		"p-timeout": "^3.2.0"
+	},
 	"devDependencies": {
 		"ava": "^3.5.1",
 		"eslint-config-richienb": "^0.4.2",
