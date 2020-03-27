@@ -1,41 +1,50 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# ntpy [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/ntpy/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/ntpy)
 
-My awesome module.
+NTP client for Node.js.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/ntpy.png)](https://npmjs.com/package/ntpy)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install ntpy
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const ntpy = require("ntpy");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	const { receiveTimestamp } = await ntpy("pool.ntp.org");
+	console.log("The date is: ", receiveTimestamp);
+})();
 ```
 
 ## API
 
-### theModule(input, options?)
+### ntpy(url, options?)
 
-#### input
+#### url
 
 Type: `string`
 
-Lorem ipsum.
+The url of a NTP server to use.
 
 #### options
 
 Type: `object`
 
-##### postfix
+##### port
 
-Type: `string`\
-Default: `rainbows`
+Type: `number`\
+Default: `123`
 
-Lorem ipsum.
+The port to use when connecting to the NTP server.
+
+##### timeout
+
+Type: `number | false`\
+Default: `10000`
+
+The timeout in milliseconds for the request to complete. Set to `false` to disable.
